@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 
 /**
  * Created by PhpStorm.
@@ -6,9 +7,6 @@
  * Date: 10.01.17
  * Time: 20:30
  */
-
-require "company.class.php";
-
 class Companies
 {
     /*
