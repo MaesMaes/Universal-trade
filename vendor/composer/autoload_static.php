@@ -14,6 +14,7 @@ class ComposerStaticInit9e0bad9bc653def993f98f23bb55a878
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
+            'Slim\\PDO\\' => 9,
             'Slim\\Csrf\\' => 10,
             'Slim\\' => 5,
         ),
@@ -32,6 +33,10 @@ class ComposerStaticInit9e0bad9bc653def993f98f23bb55a878
     );
 
     public static $prefixDirsPsr4 = array (
+        'Slim\\PDO\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/pdo/src/PDO',
+        ),
         'Slim\\Csrf\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/csrf/src',
