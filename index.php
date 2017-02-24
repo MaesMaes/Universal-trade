@@ -7,6 +7,7 @@
  */
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
+use XBase\Table;
 
 require 'vendor/autoload.php';
 require 'database/Database.php';
@@ -467,6 +468,119 @@ $app->delete(
 
 /**
  * ========================================================================================================================
+ * ===================================================PRODUCTS=============================================================
+ * ========================================================================================================================
+ */
+
+
+/**
+ * Получить список клиентов в JSON
+ */
+$app->get(
+    '/products',
+    function ( Request $request, Response $response )
+    {
+        $data = \Core\Get::products();
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+
+/**
+ * Получить данные о клиенте по id
+ */
+$app->get(
+    '/products/{id}',
+    function ( Request $request, Response $response, $args )
+    {
+        $data = \Core\Get::product( $args['id'] );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * Добавление клиента
+ */
+$app->post(
+    '/products',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Set::product( $body );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+
+/**
+ * Редактировать клиента по id
+ */
+$app->put(
+    '/products/{id}',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Set::product( $body, $args['id'] );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ *  Удалить клиента по id
+ */
+$app->delete(
+    '/products/{id}',
+    function ( Request $request, Response $response, $args )
+    {
+        $data = \Core\Delete::object( 'products', $args['id'] );
+
+        if ( $data == 0 )
+        {
+            // id не найден
+
+            $newResponse = $response->withStatus(404);
+            return $newResponse;
+        }
+
+        // Удаление прошло успешно
+        $newResponse = $response->withStatus(204);
+
+        return $newResponse;
+    }
+);
+
+/**
+ * ========================================================================================================================
  * ======================================================BIK===============================================================
  * ========================================================================================================================
  */
@@ -475,13 +589,92 @@ $app->delete(
  * Получить данные о БИК
  */
 $app->get(
-    '/bik',
+    '/biks',
     function ( Request $request, Response $response, $args )
     {
-//        $data = \Core\Get::document( $args['id'] );
+        $data = \Core\Get::BIKs();
 
-        $db = dbase_open('/tmp/test.dbf', 0);
-        $data = dbase_get_record( $db, 0 );
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * Получить данные о БИК по id
+ */
+$app->get(
+    '/biks/{id}',
+    function ( Request $request, Response $response, $args )
+    {
+        $data = \Core\Get::BIK( $args['id'] );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * Добавление БИКа
+ */
+$app->post(
+    '/biks',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Set::BIK( $body );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * Редактировать БИК по id
+ */
+$app->put(
+    '/biks/{id}',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Set::BIK( $body, $args['id'] );
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * Обновить базу БИКов
+ */
+$app->get(
+    '/biks-update',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Query::updateBIKDatabase();
 
         $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
 

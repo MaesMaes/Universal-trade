@@ -27,6 +27,88 @@ class Query
             return json_decode( $data );
         }
     }
+
+    /**
+     * Get data from tmp/bik.xml and insert in bik table.
+     *
+     * @return bool|object
+     */
+    public static function updateBIKDatabase()
+    {
+        $url = 'http://www.bik-info.ru/base/base.xml';
+        $dir = '/tmp/';
+
+        // Получаем актуальный XML
+        //$newXML = file_get_contents( $url );
+        //$newXMLData = simplexml_load_string( $newXML );
+
+        // Получаем текущий XML
+        $oldXML = file_get_contents( 'tmp/bik.xml' );
+        $oldXMLData = simplexml_load_string( $oldXML );
+
+        foreach( $oldXMLData->bik as $bik )
+        {
+            $selectStatement = self::getPDO()
+                ->insert( array( 'bankBIK', 'correspondentAccount', "bankName", 'bankLocation' ) )
+                ->into('bik')
+                ->values( array(
+                    (string)$bik->attributes()->bik,
+                    (string)$bik->attributes()->ks,
+                    (string)$bik->attributes()->name,
+                    (string)$bik->attributes()->address
+                ) );
+
+            $stmt = $selectStatement->execute();
+        }
+
+        return \Core\Get::BIKs();
+    }
+
+    /**
+     * Получает строку с данными в виде '1,2,3,4,' или null,
+     * возвращеат массив по делиметру "," или пустой массив
+     *
+     * @param $data
+     * @return array
+     */
+    public static function setDenormalizeData( $data )
+    {
+        if( $data != null || !$data)
+        {
+            $data = explode( ',',  $data );
+            foreach( $data as &$item )
+            {
+                $item = (int)$item;
+            }
+
+            // Удаляем элемент пустышку
+            array_splice( $data, -1 );
+        }
+        else
+        {
+            $data = array();
+        }
+
+        return $data;
+    }
+
+    /**
+     * Получает массив и возваращщает строку вида '1,2,3,4,'
+     *
+     * @param $data
+     * @return string
+     */
+    public static function getDenormalizeData( $data )
+    {
+        $tpmData = "";
+        foreach( $data as $item )
+        {
+            $tpmData .= $item . ',';
+        }
+
+        return $tpmData;
+    }
+
 }
 
 class Get extends Query
@@ -47,6 +129,11 @@ class Get extends Query
         if( !$data ) return (object)array(
             'companies' => array()
         );
+
+        foreach( $data as &$company )
+        {
+            $company['documents'] = self::setDenormalizeData( $company['documents'] );
+        }
 
         $companies = (object)array(
             'companies' => $data
@@ -70,7 +157,11 @@ class Get extends Query
         $stmt = $selectStatement->execute();
         $data = $stmt->fetch();
 
-        if( !$data ) return false;
+        if( !$data ) return (object)array(
+            'company' => array()
+        );
+
+        $data['documents'] = self::setDenormalizeData( $data['documents'] );
 
         $company = (object)array(
             'company' => $data
@@ -146,6 +237,11 @@ class Get extends Query
             'documents' => array()
         );
 
+        foreach( $data as &$doc )
+        {
+            $doc['products'] = self::setDenormalizeData( $doc['products'] );
+        }
+
         $documents = (object)array(
             'documents' => $data
         );
@@ -171,6 +267,8 @@ class Get extends Query
         if( !$data ) return (object)array(
             'document' => array()
         );
+
+        $data['products'] = self::setDenormalizeData( $data['products'] );
 
         $document = (object)array(
             'document' => $data
@@ -228,6 +326,106 @@ class Get extends Query
 
         return $client;
     }
+
+    /**
+     * Возвращает список товаров
+     * @return bool|object
+     */
+    public static function products()
+    {
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('products');
+
+        $stmt = $selectStatement->execute();
+        $data = $stmt->fetchAll();
+
+        if( !$data ) return (object)array(
+            'products' => array()
+        );
+
+        $products = (object)array(
+            'products' => $data
+        );
+
+        return $products;
+    }
+
+    /**
+     * Возвращает данные о товаре по id
+     * @param $id
+     * @return bool|object
+     */
+    public static function product( $id )
+    {
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('products')
+            ->where('id', '=', $id);
+
+        $stmt = $selectStatement->execute();
+        $data = $stmt->fetch();
+
+        if( !$data ) return (object)array(
+            'product' => array()
+        );
+
+        $product = (object)array(
+            'product' => $data
+        );
+
+        return $product;
+    }
+
+    /**
+     * Возвращает список БИКов
+     * @return bool|object
+     */
+    public static function BIKs()
+    {
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('bik');
+
+        $stmt = $selectStatement->execute();
+        $data = $stmt->fetchAll();
+
+        if( !$data ) return (object)array(
+            'biks' => array()
+        );
+
+        $biks = (object)array(
+            'biks' => $data
+        );
+
+        return $biks;
+    }
+
+    /**
+     * Возвращает данные о БИКе по id
+     * @param $id
+     * @return bool|object
+     */
+    public static function BIK( $id )
+    {
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('bik')
+            ->where('id', '=', $id);
+
+        $stmt = $selectStatement->execute();
+        $data = $stmt->fetch();
+
+        if( !$data ) return (object)array(
+            'bik' => array()
+        );
+
+        $bik = (object)array(
+            'bik' => $data
+        );
+
+        return $bik;
+    }
 }
 
 class Set extends Query
@@ -247,7 +445,9 @@ class Set extends Query
         {
             // UPDATE company by $id
 
-            $company = self::getAllData( $company );
+            $company = self::getAllData( $body['company'] );
+
+            $company->documents = self::getDenormalizeData( $company->documents );
 
             $selectStatement = self::getPDO()
                 ->update( array(
@@ -259,12 +459,12 @@ class Set extends Query
                     "kpp"                   => $company->KPP,
                     "checkingAccount"       => $company->checkingAccount,
                     "correspodentAccount"   => $company->correspodentAccount,
-                    "bank"                  => $company->bank,
                     "bik"                   => $company->BIK,
                     "phoneFirst"            => $company->phoneFirst, //
                     "phoneSecond"           => $company->phoneSecond, //
                     "stastisticsCode"       => $company->stastisticsCode, //
                     "address"               => $company->address, //
+                    'documents'             => $company->documents
                 ) )
                 ->table('companies')
                 ->where('id', '=', $id );
@@ -283,6 +483,8 @@ class Set extends Query
                 'document' => array()
             );
 
+            $data['documents'] = self::setDenormalizeData( $data['documents'] );
+
             $company = (object)array(
                 'company' => $data
             );
@@ -291,12 +493,29 @@ class Set extends Query
         {
             // INSERT company
 
-            $company = self::getAllData( $company );
+            $company = self::getAllData( $body['company'] );
+
+            $company->documents = self::getDenormalizeData( $company->documents );
 
             $selectStatement = self::getPDO()
-                ->insert( array( 'shortName', 'fullName', 'director', 'accountant',  "inn",  "kpp", "checkingAccount", "correspodentAccount", "bik", "phoneFirst", "phoneSecond", "stastisticsCode", "address" ) )
+                ->insert( array( 'shortName', 'fullName', 'director', 'accountant',  "inn",  "kpp", "checkingAccount", "correspodentAccount", "bik", "phoneFirst", "phoneSecond", "stastisticsCode", "address", 'documents' ) )
                 ->into('companies')
-                ->values( array( null, null, null, null, null, null, null, null, null, null, null, null, null ) );
+                ->values( array(
+                    $company->shortName,
+                    $company->fullName,
+                    $company->director,
+                    $company->accountant,
+                    $company->INN,
+                    $company->KPP,
+                    $company->checkingAccount,
+                    $company->correspodentAccount,
+                    $company->BIK,
+                    $company->phoneFirst,
+                    $company->phoneSecond,
+                    $company->stastisticsCode,
+                    $company->address,
+                    $company->documents
+                ) );
 
             $stmt = $selectStatement->execute();
 
@@ -307,6 +526,12 @@ class Set extends Query
 
             $stmt = $selectStatement->execute();
             $data = $stmt->fetch();
+
+            if( !$data ) return (object)array(
+                'document' => array()
+            );
+
+            $data['documents'] = self::setDenormalizeData( $data['documents'] );
 
             $company = (object)array(
                 'company' => $data
@@ -367,7 +592,13 @@ class Set extends Query
             $selectStatement = self::getPDO()
                 ->insert( array( 'pass', 'name', "email",  "phone", "status" ) )
                 ->into('users')
-                ->values( array( null, null, null, null, null ) );
+                ->values( array(
+                    $user->pass,
+                    $user->name,
+                    $user->email,
+                    $user->phone,
+                    $user->status
+                ) );
 
             $stmt = $selectStatement->execute();
 
@@ -404,6 +635,8 @@ class Set extends Query
 
             $document = self::getAllData( $body['document'] );
 
+            $document->products = self::getDenormalizeData( $document->products );
+
             $selectStatement = self::getPDO()
                 ->update( array(
                     'numberTemplate'    => $document->numberTemplate,
@@ -423,6 +656,8 @@ class Set extends Query
                     "receiptDate"       => $document->receiptDate,
                     "clientID"          => $document->clientID,
                     "status"            => $document->status,
+                    'parentCompany'     => $document->parentCompany,
+                    'products'          => $document->products,
                 ) )
                 ->table('documents')
                 ->where('id', '=', $id );
@@ -441,6 +676,8 @@ class Set extends Query
                 'document' => array()
             );
 
+            $data['products'] = self::setDenormalizeData( $data['products'] );
+
             $document = (object)array(
                 'document' => $data
             );
@@ -451,10 +688,32 @@ class Set extends Query
 
             $document = self::getAllData( $body['user'] );
 
+            $document->products = self::getDenormalizeData( $document->products );
+
             $selectStatement = self::getPDO()
-                ->insert( array( 'numberTemplate', 'createNumber', "createDate",  "editNumber", "editDate", 'sellerName', 'sellerAddress', 'sellerINN', 'sellerKPP', 'buyerName', 'buyerAddress', 'buyerInn', 'buyerKPP', 'receiptNumber', 'receiptDate', 'clientID', 'status' ) )
+                ->insert( array( 'numberTemplate', 'createNumber', "createDate",  "editNumber", "editDate", 'sellerName', 'sellerAddress', 'sellerINN', 'sellerKPP', 'buyerName', 'buyerAddress', 'buyerInn', 'buyerKPP', 'receiptNumber', 'receiptDate', 'clientID', 'status', 'parentCompany', 'products' ) )
                 ->into('documents')
-                ->values( array( null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ) );
+                ->values( array(
+                    $document->numberTemplate,
+                    $document->createNumber,
+                    $document->createDate,
+                    $document->editNumber,
+                    $document->editDate,
+                    $document->editNumber,
+                    $document->sellerAddress,
+                    $document->sellerINN,
+                    $document->sellerKPP,
+                    $document->buyerName,
+                    $document->buyerAddress,
+                    $document->buyerInn,
+                    $document->buyerKPP,
+                    $document->receiptNumber,
+                    $document->receiptDate,
+                    $document->clientID,
+                    $document->status,
+                    $document->parentCompany,
+                    $document->products,
+                ) );
 
             $stmt = $selectStatement->execute();
 
@@ -465,6 +724,12 @@ class Set extends Query
 
             $stmt = $selectStatement->execute();
             $data = $stmt->fetch();
+
+            if( !$data ) return (object)array(
+                'document' => array()
+            );
+
+            $data['products'] = self::setDenormalizeData( $data['products'] );
 
             $document = (object)array(
                 'document' => $data
@@ -539,12 +804,165 @@ class Set extends Query
             $stmt = $selectStatement->execute();
             $data = $stmt->fetch();
 
+            if( !$data ) return (object)array(
+                'client' => array()
+            );
+
             $client = (object)array(
                 'client' => $data
             );
         }
 
         return $client;
+    }
+
+    /**
+     * Делает UPDATE или INSERT товара
+     *
+     * @param null $body
+     * @param null $id
+     * @return mixed|object|string
+     */
+    public static function product( $body = null, $id = null )
+    {
+        $product = "";
+
+        if( $id && $body )
+        {
+            // UPDATE document by $id
+
+            $product = self::getAllData( $body['product'] );
+
+            $selectStatement = self::getPDO()
+                ->update( array(
+                    'name'           => $product->name,
+                    "amount"         => $product->amount,
+                    "price"          => $product->price,
+                    "tax"            => $product->tax,
+                    'parentDocument' => $product->parentDocument
+                ) )
+                ->table('products')
+                ->where('id', '=', $id );
+
+            $stmt = $selectStatement->execute();
+
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from('products')
+                ->where('id', '=', $id);
+
+            $stmt = $selectStatement->execute();
+            $data = $stmt->fetch();
+
+            if( !$data ) return (object)array(
+                'product' => array()
+            );
+
+            $product = (object)array(
+                'product' => $data
+            );
+        }
+        else if ( $body )
+        {
+            // INSERT document
+
+            $product = self::getAllData( $body['product'] );
+
+            $selectStatement = self::getPDO()
+                ->insert( array( 'name', 'amount', "price", 'tax', 'parentDocument' ) )
+                ->into('products')
+                ->values( array( null, null, null, null, null ) );
+
+            $stmt = $selectStatement->execute();
+
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from('products')
+                ->where('id', '=', $stmt);
+
+            $stmt = $selectStatement->execute();
+            $data = $stmt->fetch();
+
+            $product = (object)array(
+                'product' => $data
+            );
+        }
+
+        return $product;
+    }
+
+    /**
+     * Делает UPDATE или INSERT БИКа
+     *
+     * @param null $body
+     * @param null $id
+     * @return mixed|object|string
+     */
+    public static function BIK( $body = null, $id = null )
+    {
+        $bik =  "";
+
+        if( $id && $body )
+        {
+            // UPDATE document by $id
+
+            $bik = self::getAllData( $body['bik'] );
+
+            $selectStatement = self::getPDO()
+                ->update( array(
+                    'bankBIK'               => $bik->bankBIK,
+                    "correspondentAccount"  => $bik->correspondentAccount,
+                    "bankName"              => $bik->bankName,
+                    "bankLocation"          => $bik->bankLocation,
+                ) )
+                ->table('bik')
+                ->where('id', '=', $id );
+
+            $stmt = $selectStatement->execute();
+
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from('bik')
+                ->where('id', '=', $id);
+
+            $stmt = $selectStatement->execute();
+            $data = $stmt->fetch();
+
+            if( !$data ) return (object)array(
+                'bik' => array()
+            );
+
+            $bik = (object)array(
+                'bik' => $data
+            );
+        }
+        else if ( $body )
+        {
+            // INSERT document
+
+            $bik = self::getAllData( $body['bik'] );
+
+            $selectStatement = self::getPDO()
+                ->insert( array( 'bankBIK', 'correspondentAccount', "bankName", 'bankLocation' ) )
+                ->into('bik')
+                ->values( array( null, null, null, null ) );
+
+            $stmt = $selectStatement->execute();
+
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from('bik')
+                ->where('id', '=', $stmt);
+
+            $stmt = $selectStatement->execute();
+            $data = $stmt->fetch();
+
+            $bik = (object)array(
+                'bik' => $data
+            );
+        }
+
+        return $bik;
     }
 }
 
@@ -553,7 +971,7 @@ class Delete extends Query
     /**
      * Удаляет запись по id и type
      *
-     * @param $type 'companies', 'users', 'documents'
+     * @param $type 'companies', 'users', 'documents', 'clients', 'products'
      * @param $id
      * Возвращает false если не переданы параметры,
      * 1 если запись была удалена и 0 если id не существует.
