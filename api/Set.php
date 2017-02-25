@@ -34,16 +34,17 @@ class Set extends Query
                     'fullName'              => $company->fullName,
                     'director'              => $company->director, //
                     'accountant'            => $company->accountant, //
-                    "inn"                   => $company->INN,
-                    "kpp"                   => $company->KPP,
+                    "INN"                   => $company->INN,
+                    "KPP"                   => $company->KPP,
                     "checkingAccount"       => $company->checkingAccount,
                     "correspodentAccount"   => $company->correspodentAccount,
-                    "bik"                   => $company->BIK,
+                    "BIK"                   => $company->BIK,
                     "phoneFirst"            => $company->phoneFirst, //
                     "phoneSecond"           => $company->phoneSecond, //
                     "stastisticsCode"       => $company->stastisticsCode, //
                     "address"               => $company->address, //
-                    'documents'             => $company->documents
+                    'documents'             => $company->documents,
+                    'bank'                  => $company->bank
                 ) )
                 ->table('companies')
                 ->where('id', '=', $id );
@@ -77,7 +78,7 @@ class Set extends Query
             $company->documents = self::getDenormalizeData( $company->documents );
 
             $selectStatement = self::getPDO()
-                ->insert( array( 'shortName', 'fullName', 'director', 'accountant',  "inn",  "kpp", "checkingAccount", "correspodentAccount", "bik", "phoneFirst", "phoneSecond", "stastisticsCode", "address", 'documents' ) )
+                ->insert( array( 'shortName', 'fullName', 'director', 'accountant',  "INN",  "KPP", "checkingAccount", "correspodentAccount", "BIK", "phoneFirst", "phoneSecond", "stastisticsCode", "address", 'documents', 'bank' ) )
                 ->into('companies')
                 ->values( array(
                     $company->shortName,
@@ -93,7 +94,8 @@ class Set extends Query
                     $company->phoneSecond,
                     $company->stastisticsCode,
                     $company->address,
-                    $company->documents
+                    $company->documents,
+                    $company->bank
                 ) );
 
             $stmt = $selectStatement->execute();
