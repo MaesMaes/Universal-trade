@@ -136,6 +136,22 @@ class Get extends Query
         foreach( $data as &$doc )
         {
             $doc['products'] = self::setDenormalizeData( $doc['products'] );
+
+            $products = array();
+            foreach( $doc['products'] as &$prodID )
+            {
+                $selectStatement = self::getPDO()
+                    ->select()
+                    ->from( 'products' )
+                    ->where( 'id', '=', $prodID );
+
+                $stmt = $selectStatement->execute();
+                $product = $stmt->fetch();
+
+                $products[] = $product;
+            }
+
+            $doc['products'] = $products;
         }
 
         $documents = (object)array(
@@ -165,6 +181,22 @@ class Get extends Query
         );
 
         $data['products'] = self::setDenormalizeData( $data['products'] );
+
+        $products = array();
+        foreach( $data['products'] as &$prodID )
+        {
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from( 'products' )
+                ->where( 'id', '=', $prodID );
+
+            $stmt = $selectStatement->execute();
+            $product = $stmt->fetch();
+
+            $products[] = $product;
+        }
+
+        $data['products'] = $products;
 
         $document = (object)array(
             'document' => $data
