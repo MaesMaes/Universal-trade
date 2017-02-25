@@ -29,6 +29,40 @@ class Get extends Query
         foreach( $data as &$company )
         {
             $company['documents'] = self::setDenormalizeData( $company['documents'] );
+
+            $documents = array();
+            foreach( $company['documents'] as &$docID )
+            {
+                $selectStatement = self::getPDO()
+                    ->select()
+                    ->from( 'documents' )
+                    ->where( 'id', '=', $docID );
+
+                $stmt = $selectStatement->execute();
+                $document = $stmt->fetch();
+
+                $document['products'] = self::setDenormalizeData( $document['products'] );
+
+                $products = array();
+                foreach( $document['products'] as $prodID )
+                {
+                    $selectStatement = self::getPDO()
+                        ->select()
+                        ->from( 'products' )
+                        ->where( 'id', '=', $prodID );
+
+                    $stmt = $selectStatement->execute();
+                    $product = $stmt->fetch();
+
+                    $products[] = $product;
+                }
+
+                $document['products'] = $products;
+
+                $documents[] = $document;
+            }
+
+            $company['documents'] = $documents;
         }
 
         $companies = (object)array(
@@ -58,6 +92,40 @@ class Get extends Query
         );
 
         $data['documents'] = self::setDenormalizeData( $data['documents'] );
+
+        $documents = array();
+        foreach( $data['documents'] as &$docID )
+        {
+            $selectStatement = self::getPDO()
+                ->select()
+                ->from( 'documents' )
+                ->where( 'id', '=', $docID );
+
+            $stmt = $selectStatement->execute();
+            $document = $stmt->fetch();
+
+            $document['products'] = self::setDenormalizeData( $document['products'] );
+
+            $products = array();
+            foreach( $document['products'] as $prodID )
+            {
+                $selectStatement = self::getPDO()
+                    ->select()
+                    ->from( 'products' )
+                    ->where( 'id', '=', $prodID );
+
+                $stmt = $selectStatement->execute();
+                $product = $stmt->fetch();
+
+                $products[] = $product;
+            }
+
+            $document['products'] = $products;
+
+            $documents[] = $document;
+        }
+
+        $data['documents'] = $documents;
 
         $company = (object)array(
             'company' => $data
