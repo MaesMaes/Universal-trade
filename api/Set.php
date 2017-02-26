@@ -20,7 +20,7 @@ class Set extends Query
     {
         $company = "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE company by $id
 
@@ -69,7 +69,7 @@ class Set extends Query
                 'company' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT company
 
@@ -133,7 +133,7 @@ class Set extends Query
     {
         $user = "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE user by $id
 
@@ -164,7 +164,7 @@ class Set extends Query
                 'user' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT user
 
@@ -210,7 +210,7 @@ class Set extends Query
     {
         $document = "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE document by $id
 
@@ -245,6 +245,9 @@ class Set extends Query
 
             $stmt = $selectStatement->execute();
 
+            // Добавим поле documents для company по $document->parentCompany
+            self::updateCompanyDocuments( $id, $document->parentCompany );
+
             $selectStatement = self::getPDO()
                 ->select()
                 ->from('documents')
@@ -263,11 +266,11 @@ class Set extends Query
                 'document' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT document
 
-            $document = self::getAllData( $body['user'] );
+            $document = self::getAllData( $body['document'] );
 
             $document->products = self::getDenormalizeData( $document->products );
 
@@ -297,6 +300,9 @@ class Set extends Query
                 ) );
 
             $stmt = $selectStatement->execute();
+
+            // Добавим поле documents для company по $document->parentCompany
+            self::updateCompanyDocuments( $id, $document->parentCompany );
 
             $selectStatement = self::getPDO()
                 ->select()
@@ -331,7 +337,7 @@ class Set extends Query
     {
         $client = "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE document by $id
 
@@ -364,7 +370,7 @@ class Set extends Query
                 'client' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT document
 
@@ -408,7 +414,7 @@ class Set extends Query
     {
         $product = "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE document by $id
 
@@ -443,7 +449,7 @@ class Set extends Query
                 'product' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT document
 
@@ -483,7 +489,7 @@ class Set extends Query
     {
         $bik =  "";
 
-        if( $id && $body )
+        if( $id != null && $body != null )
         {
             // UPDATE document by $id
 
@@ -517,7 +523,7 @@ class Set extends Query
                 'bik' => $data
             );
         }
-        else if ( $body )
+        else if ( $body != null )
         {
             // INSERT document
 

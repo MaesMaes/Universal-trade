@@ -108,12 +108,53 @@ class Query
     public static function getDenormalizeData( $data )
     {
         $tpmData = "";
+
+        if( empty( $data ) ) return $tpmData;
+
         foreach( $data as $item )
         {
             $tpmData .= $item . ',';
         }
 
         return $tpmData;
+    }
+
+    /**
+     * UPDATE поля documents компании $companyID
+     *
+     * @param $documentID
+     * @param $companyID
+     */
+    public static function updateCompanyDocuments( $documentID, $companyID  )
+    {
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('companies')
+            ->where('id', '=', $companyID);
+
+        $stmt = $selectStatement->execute();
+        $company = $stmt->fetch();
+
+        $documents = $company->documents;
+
+        $documents = self::setDenormalizeData( $documents );
+
+        // Если этот документ уже есть, выходим.
+        if( in_array( $documentID, $documents ) ) return;
+
+        // Добавляем новый документ
+        $documents[] = $documentID;
+
+        $documents = self::getDenormalizeData( $documents );
+
+        $selectStatement = self::getPDO()
+            ->update( array(
+                'documents' => $documents,
+            ) )
+            ->table('companies')
+            ->where('id', '=', $companyID );
+
+        $stmt = $selectStatement->execute();
     }
 
 }
