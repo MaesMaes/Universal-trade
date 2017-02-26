@@ -301,9 +301,6 @@ class Set extends Query
 
             $stmt = $selectStatement->execute();
 
-            // Добавим поле documents для company по $document->parentCompany
-            self::updateCompanyDocuments( $id, $document->parentCompany );
-
             $selectStatement = self::getPDO()
                 ->select()
                 ->from('documents')
@@ -315,6 +312,9 @@ class Set extends Query
             if( !$data ) return (object)array(
                 'document' => array()
             );
+
+            // Добавим поле documents для company по $document->parentCompany
+            self::updateCompanyDocuments( $data['id'], $document->parentCompany );
 
             $data['products'] = self::setDenormalizeData( $data['products'] );
 
