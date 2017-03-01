@@ -345,9 +345,10 @@ class Set extends Query
 
             $selectStatement = self::getPDO()
                 ->update( array(
-                    'fullName' => $client->fullName,
-                    "email"    => $client->email,
-                    "phone"    => $client->phone,
+                    'fullName'      => $client->fullName,
+                    "email"         => $client->email,
+                    "phone"         => $client->phone,
+                    "description"   => $client->description,
                 ) )
                 ->table('clients')
                 ->where('id', '=', $id );
@@ -377,9 +378,9 @@ class Set extends Query
             $client = self::getAllData( $body['client'] );
 
             $selectStatement = self::getPDO()
-                ->insert( array( 'fullName', 'email', "phone" ) )
+                ->insert( array( 'fullName', 'email', "phone", 'description' ) )
                 ->into('clients')
-                ->values( array( null, null, null ) );
+                ->values( array( $client->fullName, $client->email, $client->phone, $client->description ) );
 
             $stmt = $selectStatement->execute();
 
