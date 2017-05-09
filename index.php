@@ -1,10 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jscheq
- * Date: 05.01.17
- * Time: 2:50
- */
+session_cache_limiter(false);
+session_start();
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use XBase\Table;
@@ -19,8 +16,8 @@ $configuration = array(
     'debug' => true,
     'displayErrorDetails' => true
 );
-$app = new \Slim\App(["settings" => $configuration]);
 
+$app = new \Slim\App(["settings" => $configuration]);
 
 /**
  * ========================================================================================================================
@@ -36,6 +33,8 @@ $app->get(
     function ( Request $request, Response $response )
     {
         $data = \Core\Get::companies();
+
+        $_SESSION['source'] = 'companies';
 
         $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
 
@@ -675,6 +674,35 @@ $app->get(
         $body = $request->getParsedBody();
 
         $data = \Core\Query::updateBIKDatabase();
+
+        $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
+
+        $newResponse
+            ->getBody()
+            ->write( json_encode( $data ) );
+
+        return $newResponse;
+    }
+);
+
+/**
+ * ========================================================================================================================
+ * ======================================================LOGIN=============================================================
+ * ========================================================================================================================
+ */
+
+/**
+ * Получить токен по логину и паролю на текущую сессию
+ */
+$app->post(
+    '/login',
+    function ( Request $request, Response $response, $args )
+    {
+        $body = $request->getParsedBody();
+
+        $data = \Core\Get::token( $body );
+
+        if ( isset( $data->token ) ) $_SESSION['token'] = $data->token;
 
         $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
 

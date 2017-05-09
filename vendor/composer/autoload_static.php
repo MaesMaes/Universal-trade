@@ -18,6 +18,10 @@ class ComposerStaticInit9e0bad9bc653def993f98f23bb55a878
             'Slim\\Csrf\\' => 10,
             'Slim\\' => 5,
         ),
+        'R' => 
+        array (
+            'RKA\\' => 4,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -45,6 +49,10 @@ class ComposerStaticInit9e0bad9bc653def993f98f23bb55a878
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'RKA\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/akrabat/rka-slim-session-middleware/RKA',
         ),
         'Psr\\Http\\Message\\' => 
         array (

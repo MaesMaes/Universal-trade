@@ -157,4 +157,15 @@ class Query
         $stmt = $selectStatement->execute();
     }
 
+    /**
+     * Проверяет залогенин ли пользователь
+     *
+     * @return bool
+     */
+    public static function isLogin()
+    {
+        if ( !isset( $_SESSION['token'] ) ) return false;
+
+        return true;
+    }
 }

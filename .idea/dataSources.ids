@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - universal_trade@localhost" uuid="2d58c003-cc9c-4afc-a41c-bddc0199bda8">
+    <database-info product="MySQL" version="5.5.42" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="universal_trade">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="couriers_schedul"/>
+      <schema id="3" name="energosi"/>
+      <schema id="4" name="information_schema"/>
+      <schema id="5" name="mailer"/>
+      <schema id="6" name="mysql"/>
+      <schema id="7" name="performance_schema"/>
+      <schema id="8" name="uspeh"/>
+      <table id="9" parent="1" name="bik"/>
+      <table id="10" parent="1" name="clients"/>
+      <table id="11" parent="1" name="companies"/>
+      <table id="12" parent="1" name="documents"/>
+      <table id="13" parent="1" name="products"/>
+      <table id="14" parent="1" name="users"/>
+      <column id="15" parent="9" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="16" parent="9" name="bankBIK">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="17" parent="9" name="correspondentAccount">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="18" parent="9" name="bankName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="19" parent="9" name="bankLocation">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="20" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="21" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="22" parent="10" name="fullName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="23" parent="10" name="email">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="24" parent="10" name="phone">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="25" parent="10" name="description">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="26" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="27" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="28" parent="11" name="shortName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="29" parent="11" name="fullName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="30" parent="11" name="INN">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="31" parent="11" name="KPP">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="32" parent="11" name="checkingAccount">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="33" parent="11" name="correspodentAccount">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="34" parent="11" name="BIK">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="35" parent="11" name="director">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="36" parent="11" name="accountant">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="37" parent="11" name="phoneFirst">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="38" parent="11" name="phoneSecond">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="39" parent="11" name="stastisticsCode">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="40" parent="11" name="address">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="41" parent="11" name="documents">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="42" parent="11" name="bank">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="43" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="44" parent="12" name="numberTemplate">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="45" parent="12" name="createNumber">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="46" parent="12" name="createDate">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="47" parent="12" name="editNumber">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="48" parent="12" name="editDate">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="49" parent="12" name="sellerName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="50" parent="12" name="sellerAddress">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="51" parent="12" name="sellerINN">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="52" parent="12" name="sellerKPP">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="53" parent="12" name="buyerName">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="54" parent="12" name="buyerAddress">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="55" parent="12" name="buyerInn">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="56" parent="12" name="buyerKPP">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="57" parent="12" name="receiptNumber">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="58" parent="12" name="receiptDate">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="59" parent="12" name="clientID">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="60" parent="12" name="status">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="61" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="62" parent="12" name="parentCompany">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="63" parent="12" name="products">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="64" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="65" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="66" parent="13" name="name">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="67" parent="13" name="amount">
+        <data-type>float|0</data-type>
+      </column>
+      <column id="68" parent="13" name="price">
+        <data-type>float|0</data-type>
+      </column>
+      <column id="69" parent="13" name="tax">
+        <data-type>float|0</data-type>
+      </column>
+      <column id="70" parent="13" name="parentDocument">
+        <data-type>int(11)|0</data-type>
+      </column>
+      <key id="71" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="72" parent="14" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="73" parent="14" name="pass">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="74" parent="14" name="name">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="75" parent="14" name="email">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="76" parent="14" name="phone">
+        <data-type>text|0</data-type>
+      </column>
+      <column id="77" parent="14" name="status">
+        <data-type>text|0</data-type>
+      </column>
+      <key id="78" parent="14" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

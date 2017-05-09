@@ -15,6 +15,10 @@ class Get extends Query
      */
     public static function companies()
     {
+        if ( !self::isLogin() ) return (object)array(
+            'companies' => []
+        );
+
         $selectStatement = self::getPDO()
             ->select()
             ->from('companies');
@@ -421,5 +425,41 @@ class Get extends Query
         );
 
         return $bik;
+    }
+
+    /**
+     * Генерирует токен
+     * @param $query
+     * @return bool|object
+     * @internal param $login
+     * @internal param $pass
+     */
+    public static function token( $query )
+    {
+        $q = self::getAllData( $query );
+
+        $selectStatement = self::getPDO()
+            ->select()
+            ->from('users')
+            ->where('name', '=', $q->login)
+            ->where('pass', '=', $q->pass);
+
+        $stmt = $selectStatement->execute();
+        $data = $stmt->fetch();
+
+        if( !$data ) return (object)array(
+            'token' => array()
+        );
+
+        $token = md5(uniqid());
+
+        $_SESSION['token'] = $token;
+//        $_SESSION['status'] = $data->status;
+
+        $token = (object)array(
+            'token' => $token
+        );
+
+        return $token;
     }
 }
