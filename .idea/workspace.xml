@@ -2,76 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="38638a08-4a75-4049-a794-96dd5565450f" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/login.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/RKA/Session.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/RKA/SessionMiddleware.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/composer.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/phpcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/phpunit.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/tests/RKATest/SessionMiddlewareTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/tests/RKATest/SessionTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware/tests/bootstrap.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/universal-trade.iml" afterPath="$PROJECT_DIR$/.idea/universal-trade.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Get.php" afterPath="$PROJECT_DIR$/api/Get.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/Query.php" afterPath="$PROJECT_DIR$/api/Query.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/core.php" afterPath="$PROJECT_DIR$/api/core.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/byte_safe_strings.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/byte_safe_strings.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/cast_to_int.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/cast_to_int.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/error_polyfill.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/error_polyfill.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_int.php" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_int.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/LICENSE.md" afterPath="$PROJECT_DIR$/vendor/slim/slim/LICENSE.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/App.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/App.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/CallableResolver.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/CallableResolver.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/CallableResolverAwareTrait.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/CallableResolverAwareTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Collection.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Collection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Container.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Container.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/DefaultServicesProvider.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/DefaultServicesProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/DeferredCallable.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/DeferredCallable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/ContainerException.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/ContainerException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/ContainerValueNotFoundException.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/ContainerValueNotFoundException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/MethodNotAllowedException.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/MethodNotAllowedException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/NotFoundException.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/NotFoundException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/SlimException.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Exception/SlimException.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/AbstractError.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/AbstractError.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/AbstractHandler.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/AbstractHandler.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Error.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Error.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/NotAllowed.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/NotAllowed.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/NotFound.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/NotFound.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/PhpError.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/PhpError.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponseArgs.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponseArgs.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Body.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Body.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Cookies.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Cookies.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Environment.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Environment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Headers.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Headers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Message.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Message.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Request.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Request.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/RequestBody.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/RequestBody.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Response.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Response.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Stream.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Stream.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/UploadedFile.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/UploadedFile.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Uri.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Http/Uri.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/CallableResolverInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/CallableResolverInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/CollectionInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/CollectionInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/CookiesInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/CookiesInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/EnvironmentInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/EnvironmentInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/HeadersInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/Http/HeadersInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/InvocationStrategyInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/InvocationStrategyInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouteGroupInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouteGroupInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouteInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouteInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouterInterface.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Interfaces/RouterInterface.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/MiddlewareAwareTrait.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/MiddlewareAwareTrait.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Routable.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Routable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Route.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Route.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/RouteGroup.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/RouteGroup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/Slim/Router.php" afterPath="$PROJECT_DIR$/vendor/slim/slim/Slim/Router.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/slim/slim/composer.json" afterPath="$PROJECT_DIR$/vendor/slim/slim/composer.json" />
     </list>
     <ignored path="universal-trade.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,6 +52,12 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -107,20 +68,20 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15744">
-              <caret line="704" column="53" selection-start-line="704" selection-start-column="53" selection-end-line="704" selection-end-column="53" />
+            <state relative-caret-position="888">
+              <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
               <folding>
-                <element signature="e#54#110#0#PHP" expanded="true" />
+                <element signature="e#331#387#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/core.php">
+      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/composer.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -129,8 +90,8 @@
       <file leaf-file-name="Delete.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/Delete.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
+            <state relative-caret-position="48">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -139,8 +100,8 @@
       <file leaf-file-name="Query.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/Query.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+            <state relative-caret-position="3984">
+              <caret line="166" column="43" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -149,8 +110,8 @@
       <file leaf-file-name="Set.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/Set.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="488" column="27" selection-start-line="488" selection-start-column="27" selection-end-line="488" selection-end-column="27" />
+            <state relative-caret-position="48">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -159,33 +120,8 @@
       <file leaf-file-name="Get.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/Get.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="universal_trade.users" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/329543af/2d58c003-cc9c-4afc-a41c-bddc0199bda8/universal_trade.users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="706">
+              <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -193,13 +129,19 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/company.php" />
         <option value="$PROJECT_DIR$/classes/company.php" />
         <option value="$PROJECT_DIR$/classes/companies.class.php" />
@@ -232,18 +174,25 @@
         <option value="$PROJECT_DIR$/../../UGATU/hello.asm" />
         <option value="$PROJECT_DIR$/../../UGATU/hello3.asm" />
         <option value="$PROJECT_DIR$/../../tmp/index.php" />
-        <option value="$PROJECT_DIR$/api/Delete.php" />
         <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/config.php" />
-        <option value="$PROJECT_DIR$/api/Set.php" />
         <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/ReportAdmin.php" />
         <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/IndexView.php" />
         <option value="$PROJECT_DIR$/../../dump2.sql" />
         <option value="$PROJECT_DIR$/api/Token.php" />
         <option value="$PROJECT_DIR$/api/core.php" />
         <option value="$PROJECT_DIR$/api/Query.php" />
+        <option value="$PROJECT_DIR$/js/main.js" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/Database.php" />
+        <option value="$PROJECT_DIR$/api/Set.php" />
+        <option value="$PROJECT_DIR$/api/Delete.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/api/Get.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index.html" />
+        <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index.php" />
+        <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index 2.php" />
+        <option value="/private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/main.css" />
       </list>
     </option>
   </component>
@@ -268,7 +217,7 @@
       <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
       <path value="$PROJECT_DIR$/vendor/slim/pdo" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/akrabat/rka-slim-session-middleware" />
+      <path value="$PROJECT_DIR$/vendor/palanik/corsslim" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
@@ -300,27 +249,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ColorIdeProjectViewPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="universal-trade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="universal-trade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="universal-trade" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ColorIdeProjectViewPane">
+        <subPane />
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -390,7 +322,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../couriers-schedul" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
@@ -510,12 +442,16 @@
       <workItem from="1493565226713" duration="2724000" />
       <workItem from="1493619569322" duration="121000" />
       <workItem from="1493629761704" duration="261000" />
-      <workItem from="1494248023492" duration="7901000" />
+      <workItem from="1494248023492" duration="15236000" />
+      <workItem from="1494820151987" duration="516000" />
+      <workItem from="1495452385491" duration="5779000" />
+      <workItem from="1496909309589" duration="969000" />
+      <workItem from="1497182100692" duration="551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148946000" />
+    <option name="totallyTimeSpent" value="164096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -528,12 +464,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19027483" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942554" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26074702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26074702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -585,16 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/header.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index 2.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index 3.php" />
-    <entry file="file://$PROJECT_DIR$/Helpers/Helpers.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/component.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/config 2.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/config.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/template.php" />
-    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/MainView.php" />
     <entry file="file://$PROJECT_DIR$/../../tmp/back/index.tpl" />
     <entry file="file://$PROJECT_DIR$/../../tmp/index.tpl" />
     <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/ReportAdmin.php" />
@@ -640,7 +566,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +578,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -661,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +597,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -687,7 +609,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +621,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,23 +628,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/Delete.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="73" column="41" selection-start-line="73" selection-start-column="41" selection-end-line="73" selection-end-column="41" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/api/Token.php" />
+    <entry file="dbDummy://dbtable:/329543af/2d58c003-cc9c-4afc-a41c-bddc0199bda8/universal_trade.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Token.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -737,7 +653,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -750,7 +665,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -763,7 +677,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -776,7 +689,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -789,7 +701,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +713,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,7 +725,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -828,20 +737,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/329543af/2d58c003-cc9c-4afc-a41c-bddc0199bda8/universal_trade.users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -849,7 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -862,7 +756,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -875,7 +768,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +780,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -901,31 +792,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Set.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="488" column="27" selection-start-line="488" selection-start-column="27" selection-end-line="488" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/Query.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="166" column="0" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,24 +799,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/329543af/2d58c003-cc9c-4afc-a41c-bddc0199bda8/universal_trade.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/329543af/2d58c003-cc9c-4afc-a41c-bddc0199bda8/universal_trade.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/Database.php" />
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Set.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/palanik/corsslim/CorsSlim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/Query.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3984">
+          <caret line="166" column="43" selection-start-line="166" selection-start-column="8" selection-end-line="166" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15744">
-          <caret line="704" column="53" selection-start-line="704" selection-start-column="53" selection-end-line="704" selection-end-column="53" />
+        <state relative-caret-position="888">
+          <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
           <folding>
-            <element signature="e#54#110#0#PHP" expanded="true" />
+            <element signature="e#331#387#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index.php" />
+    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index.html" />
+    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/index 2.php" />
+    <entry file="file:///private/var/folders/56/bklhlt2j4m5d7_1fxy6774mw0000gn/T/fz3temp-2/main.css" />
     <entry file="file://$PROJECT_DIR$/api/Get.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        <state relative-caret-position="706">
+          <caret line="76" column="6" selection-start-line="76" selection-start-column="6" selection-end-line="76" selection-end-column="6" />
           <folding />
         </state>
       </provider>

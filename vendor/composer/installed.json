@@ -452,51 +452,49 @@
         ]
     },
     {
-        "name": "akrabat/rka-slim-session-middleware",
-        "version": "2.0.0",
-        "version_normalized": "2.0.0.0",
+        "name": "palanik/corsslim",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/akrabat/rka-slim-session-middleware.git",
-            "reference": "e4f8f485f6d52fd4c0a2254d0b12240245629e6a"
+            "url": "https://github.com/palanik/CorsSlim.git",
+            "reference": "0f06ff5a9709ee1c831a25cda3028008d86a48eb"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/akrabat/rka-slim-session-middleware/zipball/e4f8f485f6d52fd4c0a2254d0b12240245629e6a",
-            "reference": "e4f8f485f6d52fd4c0a2254d0b12240245629e6a",
+            "url": "https://api.github.com/repos/palanik/CorsSlim/zipball/0f06ff5a9709ee1c831a25cda3028008d86a48eb",
+            "reference": "0f06ff5a9709ee1c831a25cda3028008d86a48eb",
             "shasum": ""
         },
         "require": {
-            "php": ">=5.5"
+            "slim/slim": ">=2.4.0"
         },
-        "require-dev": {
-            "slim/slim": "^3.0"
-        },
-        "time": "2016-04-18T07:52:43+00:00",
+        "time": "2015-11-19T05:44:29+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "RKA\\": "RKA"
+                "CorsSlim\\": "."
             }
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "BSD-3-Clause"
+            "MIT"
         ],
         "authors": [
             {
-                "name": "Rob Allen",
-                "email": "rob@akrabat.com",
-                "homepage": "http://akrabat.com"
+                "name": "palanik"
             }
         ],
-        "description": "Simple session middleware for Slim Framework",
-        "homepage": "http://github.com/akrabat/rka-slim-session-middleware",
+        "description": "Cross-origin resource sharing (CORS) middleware for PHP Slim.",
+        "homepage": "https://github.com/palanik/CorsSlim",
         "keywords": [
-            "middleware",
-            "session",
-            "slim"
+            "cors",
+            "corsslim",
+            "cross-origin",
+            "preflight",
+            "slim",
+            "slimphp"
         ]
     }
 ]

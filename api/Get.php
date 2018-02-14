@@ -15,10 +15,6 @@ class Get extends Query
      */
     public static function companies()
     {
-        if ( !self::isLogin() ) return (object)array(
-            'companies' => []
-        );
-
         $selectStatement = self::getPDO()
             ->select()
             ->from('companies');
@@ -441,23 +437,22 @@ class Get extends Query
         $selectStatement = self::getPDO()
             ->select()
             ->from('users')
-            ->where('name', '=', $q->login)
+            ->where('email', '=', $q->email)
             ->where('pass', '=', $q->pass);
 
         $stmt = $selectStatement->execute();
         $data = $stmt->fetch();
 
         if( !$data ) return (object)array(
-            'token' => array()
+            'PHPSESSID' => array()
         );
 
-        $token = md5(uniqid());
+        $token = session_id();
 
         $_SESSION['token'] = $token;
-//        $_SESSION['status'] = $data->status;
 
         $token = (object)array(
-            'token' => $token
+            'PHPSESSID' => $token
         );
 
         return $token;

@@ -1,4 +1,9 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Credentials: true");
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Disposition, Content-Description');
+
 session_cache_limiter(false);
 session_start();
 
@@ -14,7 +19,7 @@ require 'api/core.php';
 // Конфигурируем и инициализируем сервис
 $configuration = array(
     'debug' => true,
-    'displayErrorDetails' => true
+    'displayErrorDetails' => true,
 );
 
 $app = new \Slim\App(["settings" => $configuration]);
@@ -33,8 +38,6 @@ $app->get(
     function ( Request $request, Response $response )
     {
         $data = \Core\Get::companies();
-
-        $_SESSION['source'] = 'companies';
 
         $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
 
@@ -702,7 +705,7 @@ $app->post(
 
         $data = \Core\Get::token( $body );
 
-        if ( isset( $data->token ) ) $_SESSION['token'] = $data->token;
+//        if ( isset( $data->token ) ) $_SESSION['token'] = $data->token;
 
         $newResponse = $response->withAddedHeader( 'Content-type', 'application/json' );
 
@@ -711,6 +714,17 @@ $app->post(
             ->write( json_encode( $data ) );
 
         return $newResponse;
+    }
+);
+
+/**
+ * Рендер окна логина
+ */
+$app->get(
+    '/login',
+    function ( Request $request, Response $response, $args )
+    {
+        require "login.php";
     }
 );
 
